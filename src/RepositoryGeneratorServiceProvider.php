@@ -15,7 +15,6 @@ class RepositoryGeneratorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/repository-generator.php', 'repository-generator');
     }
 
     public function boot()
@@ -25,9 +24,6 @@ class RepositoryGeneratorServiceProvider extends ServiceProvider
                 MakeRepository::class,
             ]);
 
-            $this->publishes([
-                __DIR__.'/../config/repository-generator.php' => config_path('repository-generator.php'),
-            ], 'config');
         }
     }
 }
